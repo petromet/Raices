@@ -1,0 +1,662 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Guía de radicales 4º ESO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: cuaderno de cuadrícula — índice fijo a la izquierda en escritorio, una columna de lectura; cajas de "regla", "ejemplo" y "cuidado" con papel propio */
+:root{
+  --paper:#f3f6fa;
+  --grid:#dfe7f1;
+  --sheet:#ffffff;
+  --ink:#16243a;
+  --ink-soft:#4b5b73;
+  --line:#c9d4e3;
+  --accent:#1d5fd1;
+  --accent-soft:#e3ecfb;
+  --marker:#ffe680;
+  --marker-ink:#4a3b00;
+  --warn:#b4231f;
+  --warn-soft:#fdeceb;
+  --ok:#17784a;
+  --ok-soft:#e6f4ec;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1724;--grid:#18233a;--sheet:#152034;--ink:#e6edf7;--ink-soft:#a3b2c8;--line:#2a3a55;
+  --accent:#7fb0ff;--accent-soft:#1b2c4b;--marker:#5a4a08;--marker-ink:#fff1b0;
+  --warn:#ff8a84;--warn-soft:#3a1a1c;--ok:#6fd3a0;--ok-soft:#14322a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1724;--grid:#18233a;--sheet:#152034;--ink:#e6edf7;--ink-soft:#a3b2c8;--line:#2a3a55;
+  --accent:#7fb0ff;--accent-soft:#1b2c4b;--marker:#5a4a08;--marker-ink:#fff1b0;
+  --warn:#ff8a84;--warn-soft:#3a1a1c;--ok:#6fd3a0;--ok-soft:#14322a;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;
+  color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;
+  padding-inline:16px;padding-block:0 64px;
+}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+
+/* índice */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);padding-block:32px;max-height:100vh;overflow-y:auto}
+nav.toc .lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;counter-reset:t}
+nav.toc a{display:flex;gap:10px;padding:5px 8px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:14.5px;line-height:1.3}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft);outline:none}
+nav.toc a span{font-family:var(--f-mono);font-size:11.5px;color:var(--accent);min-width:20px;padding-top:2px}
+@media (max-width:900px){nav.toc{position:static;max-height:none;padding-block:16px 0}
+  nav.toc ol{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+
+main{min-width:0;padding-block:32px 0}
+
+header.hero{padding-block:8px 28px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin:.3em 0 .4em;text-wrap:balance;letter-spacing:-.01em}
+h1 .rad{display:inline-block;border-top:.09em solid var(--accent);padding:0 .12em;margin-left:.05em;position:relative}
+.lede{font-size:1.1rem;max-width:62ch;color:var(--ink-soft);margin:0}
+
+section.part{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:28px clamp(18px,4vw,40px);margin-bottom:22px;scroll-margin-top:16px}
+h2{font-family:var(--f-display);font-weight:700;font-size:1.65rem;line-height:1.15;margin:0 0 6px;text-wrap:balance;display:flex;gap:12px;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:.85rem;color:var(--accent);font-weight:500}
+h3{font-family:var(--f-display);font-weight:700;font-size:1.2rem;margin:26px 0 6px}
+p,li{max-width:68ch}
+p{margin:.55em 0}
+ul,ol{padding-left:1.3em}
+li{margin:.25em 0}
+a{color:var(--accent)}
+strong{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+.chip{font-family:var(--f-mono);font-size:11.5px;padding:3px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);letter-spacing:.02em}
+
+.box{border-radius:10px;padding:14px 18px;margin:16px 0;border:1px solid var(--line)}
+.box > .t{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;display:block}
+.box p:first-of-type{margin-top:0}
+.rule{background:var(--marker);border-color:transparent;color:var(--marker-ink)}
+.rule > .t{color:var(--marker-ink)}
+.ex{background:var(--ok-soft);border-color:transparent}
+.ex > .t{color:var(--ok)}
+.warn{background:var(--warn-soft);border-color:transparent}
+.warn > .t{color:var(--warn)}
+.tip{background:var(--accent-soft);border-color:transparent}
+.tip > .t{color:var(--accent)}
+
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+ol.steps > li{counter-increment:s;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;max-width:none}
+ol.steps > li::before{content:counter(s);font-family:var(--f-mono);font-size:13px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--sheet);display:grid;place-items:center;margin-top:2px}
+ol.steps > li > div{min-width:0}
+
+.tablewrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:var(--paper);font-weight:500}
+tr:last-child td{border-bottom:none}
+td a{white-space:nowrap}
+table.pow td{text-align:center;padding:6px 8px}
+table.pow th{text-align:center}
+
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:4px 0}
+mjx-container{color:inherit}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.two > *{min-width:0}
+.factor{font-family:var(--f-mono);font-size:15px;display:inline-grid;grid-template-columns:auto auto;margin:6px 0}
+.factor span{padding:1px 12px}
+.factor span:nth-child(odd){text-align:right;border-right:2px solid var(--ink)}
+footer{color:var(--ink-soft);font-size:14px;padding-block:10px;max-width:68ch}
+</style>
+
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{enableMenu:false}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <div class="lab">Índice</div>
+  <ol>
+    <li><a href="#mapa"><span>00</span>Mapa de la hoja</a></li>
+    <li><a href="#primos"><span>01</span>Factores primos, m.c.d. y m.c.m.</a></li>
+    <li><a href="#fracciones"><span>02</span>Fracciones</a></li>
+    <li><a href="#potencias"><span>03</span>Potencias</a></li>
+    <li><a href="#que-es"><span>04</span>Qué es una raíz</a></li>
+    <li><a href="#simplificar"><span>05</span>Simplificar y equivalentes</a></li>
+    <li><a href="#indice-comun"><span>06</span>Índice común y ordenar</a></li>
+    <li><a href="#extraer"><span>07</span>Extraer e introducir factores</a></li>
+    <li><a href="#multiplicar"><span>08</span>Multiplicar, dividir, raíz de raíz</a></li>
+    <li><a href="#sumar"><span>09</span>Sumar y restar radicales</a></li>
+    <li><a href="#identidades"><span>10</span>Identidades notables</a></li>
+    <li><a href="#racionalizar"><span>11</span>Racionalizar</a></li>
+    <li><a href="#exponente"><span>12</span>Exponente fraccionario</a></li>
+    <li><a href="#ecuaciones"><span>13</span>Despejar y demostrar</a></li>
+    <li><a href="#errores"><span>14</span>Errores típicos</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Matemáticas · 4º ESO · Repaso</div>
+  <h1>Caja de herramientas para los <span class="rad">radicales</span></h1>
+  <p class="lede">Esta guía no resuelve la hoja de ejercicios. Te explica, paso a paso y con ejemplos distintos, todas las operaciones que necesitas para hacerla tú. Si te cuestan las fracciones o las potencias, empieza por las secciones 01 a 03: casi todos los fallos con raíces vienen de ahí.</p>
+</header>
+
+<!-- 00 -->
+<section class="part" id="mapa">
+  <h2><span class="n">00</span>Mapa de la hoja: qué necesitas en cada ejercicio</h2>
+  <p>Busca el número del ejercicio que vas a hacer y repasa antes las secciones que indica. Las herramientas de la columna central son las que vas a usar.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Ejercicio</th><th>Qué te piden</th><th>Repasa</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Radical irreducible: simplificar índice y exponente</td><td><a href="#primos">01</a> · <a href="#simplificar">05</a></td></tr>
+      <tr><td>2</td><td>Ver si dos radicales son equivalentes</td><td><a href="#simplificar">05</a></td></tr>
+      <tr><td>3</td><td>Pasar a índice común y ordenar de menor a mayor</td><td><a href="#primos">01</a> (m.c.m.) · <a href="#indice-comun">06</a></td></tr>
+      <tr><td>4</td><td>Multiplicar radicales y simplificar</td><td><a href="#multiplicar">08</a> · <a href="#extraer">07</a></td></tr>
+      <tr><td>5</td><td>Introducir factores dentro de la raíz</td><td><a href="#extraer">07</a></td></tr>
+      <tr><td>6</td><td>Extraer factores fuera de la raíz</td><td><a href="#primos">01</a> · <a href="#extraer">07</a></td></tr>
+      <tr><td>7</td><td>Raíces dentro de raíces, dejar un solo radical</td><td><a href="#potencias">03</a> · <a href="#multiplicar">08</a></td></tr>
+      <tr><td>8</td><td>Cocientes, raíz de una fracción, sumas dentro de la raíz</td><td><a href="#fracciones">02</a> · <a href="#multiplicar">08</a></td></tr>
+      <tr><td>9</td><td>Sumar radicales: convertirlos en semejantes</td><td><a href="#extraer">07</a> · <a href="#sumar">09</a> · <a href="#fracciones">02</a></td></tr>
+      <tr><td>10</td><td>Cuadrados y productos con raíces</td><td><a href="#identidades">10</a></td></tr>
+      <tr><td>11 y 12</td><td>Racionalizar (quitar raíces del denominador) y operar</td><td><a href="#racionalizar">11</a> · <a href="#fracciones">02</a> · <a href="#identidades">10</a></td></tr>
+      <tr><td>13 y 17</td><td>Raíces anidadas con potencias de exponente fraccionario</td><td><a href="#potencias">03</a> · <a href="#exponente">12</a></td></tr>
+      <tr><td>14, 15 y 16</td><td>Pasar de potencia a raíz y al revés; calcular potencias</td><td><a href="#exponente">12</a> · <a href="#racionalizar">11</a></td></tr>
+      <tr><td>18</td><td>Despejar \(x\) en una ecuación con raíces</td><td><a href="#ecuaciones">13</a> · <a href="#fracciones">02</a></td></tr>
+      <tr><td>19</td><td>Demostrar que una igualdad es cierta</td><td><a href="#ecuaciones">13</a> · <a href="#identidades">10</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="box tip"><span class="t">Cómo comprobar tus resultados</span>
+    <p>Muchos apartados traen la solución entre paréntesis ("Soluc."). Úsala para comprobar, no para copiar. También puedes comprobar con la calculadora: si \(\sqrt{112}\) te da \(4\sqrt7\), calcula los dos con la calculadora y deben dar el mismo número (10,583…).</p>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="part" id="primos">
+  <h2><span class="n">01</span>Factores primos, m.c.d. y m.c.m.</h2>
+  <div class="chips"><span class="chip">Ej. 1</span><span class="chip">Ej. 3</span><span class="chip">Ej. 6</span><span class="chip">Ej. 9</span></div>
+  <p>Con raíces casi siempre hay que escribir los números como producto de <strong>números primos</strong> (números que solo se dividen entre 1 y ellos mismos: 2, 3, 5, 7, 11, 13…). Así ves qué factores se repiten y cuáles pueden salir de la raíz.</p>
+
+  <h3>Descomponer en factores primos</h3>
+  <ol class="steps">
+    <li><div>Divide el número entre el primo más pequeño que lo divida exactamente (prueba 2, luego 3, 5, 7…).</div></li>
+    <li><div>Apunta el cociente debajo y repite con él.</div></li>
+    <li><div>Para cuando llegues a 1. Los divisores de la derecha son los factores primos.</div></li>
+  </ol>
+  <div class="two">
+    <div class="box ex"><span class="t">Ejemplo: 252</span>
+      <div class="factor"><span>252</span><span>2</span><span>126</span><span>2</span><span>63</span><span>3</span><span>21</span><span>3</span><span>7</span><span>7</span><span>1</span><span></span></div>
+      <p>\(252 = 2^2\cdot 3^2\cdot 7\)</p>
+    </div>
+    <div class="box tip"><span class="t">Criterios de divisibilidad</span>
+      <ul>
+        <li><strong>Entre 2:</strong> termina en 0, 2, 4, 6 u 8.</li>
+        <li><strong>Entre 3:</strong> la suma de sus cifras es múltiplo de 3 (252 → 2+5+2 = 9 ✓).</li>
+        <li><strong>Entre 5:</strong> termina en 0 o 5.</li>
+        <li><strong>Entre 7, 11, 13:</strong> haz la división y mira si sale exacta.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Máximo común divisor (m.c.d.) y mínimo común múltiplo (m.c.m.)</h3>
+  <p>Primero descompones todos los números. Después:</p>
+  <div class="box rule"><span class="t">Regla</span>
+    <p><strong>m.c.d.</strong> = factores <strong>comunes</strong> con el exponente <strong>menor</strong>. Sirve para <strong>simplificar</strong> (fracciones y radicales).</p>
+    <p><strong>m.c.m.</strong> = factores <strong>comunes y no comunes</strong> con el exponente <strong>mayor</strong>. Sirve para <strong>poner denominador común</strong> o <strong>índice común</strong>.</p>
+  </div>
+  <div class="box ex"><span class="t">Ejemplo: 12 y 18</span>
+    <p>\(12 = 2^2\cdot 3\) y \(18 = 2\cdot 3^2\).</p>
+    <p>m.c.d. \(= 2\cdot 3 = 6\) &nbsp;·&nbsp; m.c.m. \(= 2^2\cdot 3^2 = 36\)</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="part" id="fracciones">
+  <h2><span class="n">02</span>Fracciones: todo lo que vas a necesitar</h2>
+  <div class="chips"><span class="chip">Ej. 8</span><span class="chip">Ej. 9 m–p</span><span class="chip">Ej. 11–12</span><span class="chip">Ej. 14–18</span></div>
+  <p>Una fracción \(\dfrac{a}{b}\) significa "\(a\) dividido entre \(b\)". Arriba está el <strong>numerador</strong> y abajo el <strong>denominador</strong>, que nunca puede ser 0.</p>
+
+  <h3>Simplificar una fracción</h3>
+  <p>Divide numerador y denominador entre el mismo número (lo más rápido: entre su m.c.d.). La fracción vale lo mismo, solo queda más pequeña. Una fracción está <strong>simplificada</strong> (es irreducible) cuando arriba y abajo ya no tienen ningún divisor común.</p>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{18}{24}=\frac{18:6}{24:6}=\frac{3}{4}\]
+  </div>
+  <div class="box warn"><span class="t">Cuidado</span>
+    <p>Solo se simplifica lo que <strong>multiplica</strong>, nunca lo que suma. \(\dfrac{6+\sqrt3}{3}\) <strong>no</strong> es \(2+\sqrt3\). Lo correcto es repartir: \(\dfrac{6}{3}+\dfrac{\sqrt3}{3}=2+\dfrac{\sqrt3}{3}\). Esto aparece mucho al racionalizar.</p>
+  </div>
+
+  <h3>Sumar y restar fracciones</h3>
+  <ol class="steps">
+    <li><div>Si tienen el <strong>mismo denominador</strong>, sumas los numeradores y dejas el denominador: \(\frac{2}{7}+\frac{3}{7}=\frac{5}{7}\).</div></li>
+    <li><div>Si son <strong>distintos</strong>, calcula el m.c.m. de los denominadores: ese es el denominador común.</div></li>
+    <li><div>Para cada fracción: divide el denominador común entre su denominador y multiplica el resultado por su numerador.</div></li>
+    <li><div>Suma los nuevos numeradores y simplifica al final.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{5}{6}-\frac{3}{4}+2=\frac{10}{12}-\frac{9}{12}+\frac{24}{12}=\frac{25}{12}\]
+    <p>El m.c.m. de 6 y 4 es 12. Un número entero es una fracción con denominador 1: \(2=\frac{2}{1}=\frac{24}{12}\).</p>
+  </div>
+  <div class="box tip"><span class="t">Con radicales funciona igual</span>
+    <p>El radical se comporta como una "letra": \(\dfrac{\sqrt5}{2}+\dfrac{\sqrt5}{3}=\dfrac{3\sqrt5}{6}+\dfrac{2\sqrt5}{6}=\dfrac{5\sqrt5}{6}\).</p>
+  </div>
+
+  <h3>Multiplicar y dividir fracciones</h3>
+  <div class="box rule"><span class="t">Reglas</span>
+    \[\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}\qquad\qquad \frac{a}{b}:\frac{c}{d}=\frac{a\cdot d}{b\cdot c}\]
+    <p>Multiplicar: "en línea". Dividir: "en cruz", o lo que es lo mismo, multiplicar por la fracción dada la vuelta (la <strong>inversa</strong>).</p>
+  </div>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{4}{9}\cdot\frac{3}{10}=\frac{12}{90}=\frac{2}{15}\qquad\qquad \frac{2}{5}:\frac{4}{3}=\frac{2\cdot3}{5\cdot4}=\frac{6}{20}=\frac{3}{10}\]
+    <p>Truco: antes de multiplicar, puedes simplificar un número de arriba con uno de abajo: \(\frac{4}{9}\cdot\frac{3}{10}\), el 4 con el 10 (entre 2) y el 3 con el 9 (entre 3).</p>
+  </div>
+
+  <h3>Fracciones de fracciones (fracciones "de pisos")</h3>
+  <p>Una raya de fracción larga significa dividir todo lo de arriba entre todo lo de abajo. Primero haz la operación de arriba y la de abajo por separado hasta que cada una sea una sola fracción; luego divide.</p>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{1+\frac{1}{2}}{1-\frac{1}{4}}=\frac{\frac{3}{2}}{\frac{3}{4}}=\frac{3\cdot4}{2\cdot3}=\frac{12}{6}=2\]
+    <p>Regla de los extremos y los medios: el de más arriba por el de más abajo va al numerador; los dos del medio, al denominador.</p>
+  </div>
+
+  <h3>Signos y orden de las operaciones</h3>
+  <ul>
+    <li>Orden: <strong>paréntesis → potencias y raíces → multiplicaciones y divisiones → sumas y restas</strong>.</li>
+    <li>Un signo menos delante de un paréntesis cambia el signo de todo lo de dentro: \(5-(2-\sqrt3)=5-2+\sqrt3\).</li>
+    <li>\(\dfrac{-a}{b}=-\dfrac{a}{b}=\dfrac{a}{-b}\). Es costumbre dejar el signo menos delante o arriba, nunca abajo.</li>
+  </ul>
+
+  <h3>Decimales a fracción</h3>
+  <p>Lo necesitarás en el ejercicio 16, donde algún exponente aparece como decimal.</p>
+  <ul>
+    <li><strong>Decimal exacto:</strong> escribe el número sin coma arriba y un 1 seguido de tantos ceros como decimales tenga abajo: \(0{,}25=\frac{25}{100}=\frac14\).</li>
+    <li><strong>Decimal periódico puro</strong> (se repite justo después de la coma): arriba el periodo, abajo tantos 9 como cifras tenga el periodo: \(0{,}\overline{6}=0{,}666\ldots=\frac{6}{9}=\frac23\).</li>
+  </ul>
+</section>
+
+<!-- 03 -->
+<section class="part" id="potencias">
+  <h2><span class="n">03</span>Potencias y sus propiedades</h2>
+  <div class="chips"><span class="chip">Todos los ejercicios</span></div>
+  <p>\(a^n\) significa multiplicar \(a\) por sí mismo \(n\) veces: \(2^4=2\cdot2\cdot2\cdot2=16\). \(a\) es la <strong>base</strong> y \(n\) el <strong>exponente</strong>. Las raíces son potencias "disfrazadas", así que estas reglas son la base de todo.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Propiedad</th><th>Fórmula</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Producto, misma base</td><td>\(a^m\cdot a^n=a^{m+n}\)</td><td>\(5^2\cdot5^3=5^5\)</td></tr>
+      <tr><td>Cociente, misma base</td><td>\(a^m:a^n=a^{m-n}\)</td><td>\(7^6:7^2=7^4\)</td></tr>
+      <tr><td>Potencia de potencia</td><td>\((a^m)^n=a^{m\cdot n}\)</td><td>\((2^3)^4=2^{12}\)</td></tr>
+      <tr><td>Producto, mismo exponente</td><td>\(a^n\cdot b^n=(a\cdot b)^n\)</td><td>\(2^3\cdot5^3=10^3\)</td></tr>
+      <tr><td>Potencia de una fracción</td><td>\(\left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}\)</td><td>\(\left(\frac23\right)^2=\frac49\)</td></tr>
+      <tr><td>Exponente 0</td><td>\(a^0=1\)</td><td>\(13^0=1\)</td></tr>
+      <tr><td>Exponente negativo</td><td>\(a^{-n}=\frac{1}{a^n}\)</td><td>\(4^{-2}=\frac{1}{16}\)</td></tr>
+      <tr><td>Exponente fraccionario</td><td>\(a^{m/n}=\sqrt[n]{a^m}\)</td><td>\(5^{2/3}=\sqrt[3]{25}\) (ver <a href="#exponente">12</a>)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box warn"><span class="t">Cuidado</span>
+    <p>No hay regla para la suma: \((a+b)^2\neq a^2+b^2\). Para eso están las identidades notables (sección <a href="#identidades">10</a>).</p>
+    <p>Distingue \(-3^2=-9\) (solo el 3 está al cuadrado) de \((-3)^2=9\).</p>
+  </div>
+
+  <h3>Potencias que conviene reconocer de un vistazo</h3>
+  <p>Si sabes que \(729=3^6\) o que \(1024=2^{10}\), muchos ejercicios se hacen solos.</p>
+  <div class="tablewrap"><table class="pow">
+    <thead><tr><th>Base</th><th>²</th><th>³</th><th>⁴</th><th>⁵</th><th>⁶</th><th>⁷</th><th>⁸</th><th>⁹</th><th>¹⁰</th></tr></thead>
+    <tbody>
+      <tr><td><strong>2</strong></td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td><td>256</td><td>512</td><td>1024</td></tr>
+      <tr><td><strong>3</strong></td><td>9</td><td>27</td><td>81</td><td>243</td><td>729</td><td>2187</td><td></td><td></td><td></td></tr>
+      <tr><td><strong>5</strong></td><td>25</td><td>125</td><td>625</td><td>3125</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><strong>7</strong></td><td>49</td><td>343</td><td>2401</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tablewrap"><table class="pow">
+    <thead><tr><th>n</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr></thead>
+    <tbody>
+      <tr><td><strong>n²</strong></td><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td><td>36</td><td>49</td><td>64</td><td>81</td><td>100</td><td>121</td><td>144</td><td>169</td><td>196</td><td>225</td></tr>
+      <tr><td><strong>n³</strong></td><td>1</td><td>8</td><td>27</td><td>64</td><td>125</td><td>216</td><td>343</td><td>512</td><td>729</td><td>1000</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 04 -->
+<section class="part" id="que-es">
+  <h2><span class="n">04</span>Qué es una raíz y cómo se lee</h2>
+  \[\sqrt[n]{a^m}\qquad n=\text{índice},\quad a^m=\text{radicando}\]
+  <p>\(\sqrt[n]{a}=b\) significa que \(b^n=a\). Por ejemplo, \(\sqrt[3]{125}=5\) porque \(5^3=125\). Si no se escribe índice, es 2 (raíz cuadrada).</p>
+  <ul>
+    <li><strong>Índice par</strong> (2, 4, 6…): el radicando no puede ser negativo. \(\sqrt{-4}\) no existe en los números reales.</li>
+    <li><strong>Índice impar</strong> (3, 5…): sí se puede: \(\sqrt[3]{-8}=-2\).</li>
+    <li>Un número delante de la raíz la está multiplicando: \(3\sqrt7\) es \(3\cdot\sqrt7\).</li>
+  </ul>
+  <div class="box rule"><span class="t">La idea clave de todo el tema</span>
+    \[\sqrt[n]{a^m}=a^{m/n}\]
+    <p>Una raíz es una potencia con exponente fraccionario: el exponente de dentro va arriba y el índice va abajo. Gracias a esto, todas las reglas de las potencias y de las fracciones sirven para las raíces.</p>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="part" id="simplificar">
+  <h2><span class="n">05</span>Simplificar radicales y radicales equivalentes</h2>
+  <div class="chips"><span class="chip">Ej. 1</span><span class="chip">Ej. 2</span></div>
+  <p>Como \(\sqrt[n]{a^m}=a^{m/n}\), simplificar un radical es lo mismo que simplificar la fracción \(\frac{m}{n}\).</p>
+  <div class="box rule"><span class="t">Regla</span>
+    \[\sqrt[n\cdot k]{a^{m\cdot k}}=\sqrt[n]{a^m}\]
+    <p>Puedes <strong>dividir</strong> (o multiplicar) el índice y el exponente del radicando por el mismo número sin cambiar el valor. Un radical es <strong>irreducible</strong> cuando índice y exponente ya no tienen divisores comunes.</p>
+  </div>
+  <ol class="steps">
+    <li><div>Si el radicando es un número, descomponlo en factores primos para verlo como potencia (\(64=2^6\)).</div></li>
+    <li><div>Calcula el m.c.d. del índice y de <strong>todos</strong> los exponentes de dentro.</div></li>
+    <li><div>Divide el índice y cada exponente entre ese m.c.d.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt[10]{7^4}=\sqrt[10:2]{7^{4:2}}=\sqrt[5]{7^2}=\sqrt[5]{49}\]
+    \[\sqrt[6]{16}=\sqrt[6]{2^4}=\sqrt[3]{2^2}=\sqrt[3]{4}\qquad\qquad \sqrt[12]{a^8b^4}=\sqrt[3]{a^2b}\]
+    <p>En el último, el m.c.d. de 12, 8 y 4 es 4.</p>
+  </div>
+
+  <h3>Radicales equivalentes</h3>
+  <p>Dos radicales son <strong>equivalentes</strong> si valen lo mismo. Para comprobarlo hay dos caminos:</p>
+  <ul>
+    <li>Simplifica los dos hasta su forma irreducible. Si quedan iguales, son equivalentes.</li>
+    <li>Escríbelos como potencia de la misma base y compara las fracciones de los exponentes.</li>
+  </ul>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    <p>\(\sqrt[4]{25}=\sqrt[4]{5^2}=5^{2/4}=5^{1/2}=\sqrt5\). Por tanto, \(\sqrt[4]{25}\) y \(\sqrt5\) son equivalentes. En cambio, \(\sqrt[3]{25}=5^{2/3}\) no lo es, porque \(\frac23\neq\frac12\).</p>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="part" id="indice-comun">
+  <h2><span class="n">06</span>Reducir a índice común y ordenar</h2>
+  <div class="chips"><span class="chip">Ej. 3</span><span class="chip">También para multiplicar con índices distintos</span></div>
+  <p>Es como poner denominador común a fracciones. Solo se pueden comparar (o multiplicar) radicales cuando tienen el mismo índice.</p>
+  <ol class="steps">
+    <li><div>Calcula el <strong>m.c.m.</strong> de todos los índices. Ese será el índice común.</div></li>
+    <li><div>Para cada radical: divide el índice común entre su índice. El número que sale es por el que tienes que multiplicar el exponente de dentro.</div></li>
+    <li><div>Calcula las potencias de dentro.</div></li>
+    <li><div>Para ordenar: con el mismo índice, es mayor el que tiene el radicando mayor.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplo: ordenar \(\sqrt7\) y \(\sqrt[3]{10}\)</span>
+    <p>El m.c.m. de 2 y 3 es 6.</p>
+    \[\sqrt7=\sqrt[6]{7^3}=\sqrt[6]{343}\qquad\qquad \sqrt[3]{10}=\sqrt[6]{10^2}=\sqrt[6]{100}\]
+    <p>Como \(100\lt 343\), queda \(\sqrt[3]{10}\lt\sqrt7\).</p>
+  </div>
+  <div class="box tip"><span class="t">Si hay un número delante</span>
+    <p>Mételo primero dentro de la raíz (sección <a href="#extraer">07</a>) y después reduce a índice común.</p>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="part" id="extraer">
+  <h2><span class="n">07</span>Extraer e introducir factores</h2>
+  <div class="chips"><span class="chip">Ej. 4</span><span class="chip">Ej. 5</span><span class="chip">Ej. 6</span><span class="chip">Ej. 9</span></div>
+
+  <h3>Extraer factores (sacar de la raíz)</h3>
+  <p>Un factor puede salir de una raíz de índice \(n\) cuando tiene exponente \(n\) o mayor.</p>
+  <ol class="steps">
+    <li><div>Descompón el radicando en factores primos.</div></li>
+    <li><div>Para cada factor, divide su exponente entre el índice.</div></li>
+    <li><div>El <strong>cociente</strong> es el exponente con el que sale fuera. El <strong>resto</strong> es el exponente con el que se queda dentro.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt{112}=\sqrt{2^4\cdot7}=2^2\sqrt7=4\sqrt7\]
+    \[\sqrt[3]{250}=\sqrt[3]{2\cdot5^3}=5\sqrt[3]{2}\]
+    \[\sqrt{a^7b^2}=a^3\,b\,\sqrt{a}\quad\text{porque }7:2=3\text{ y resto }1\]
+  </div>
+  <div class="box tip"><span class="t">Truco rápido para raíces cuadradas</span>
+    <p>Busca el mayor cuadrado perfecto (4, 9, 16, 25, 36, 49…) que divida al número: \(\sqrt{112}=\sqrt{16\cdot7}=4\sqrt7\).</p>
+  </div>
+
+  <h3>Introducir factores (meter en la raíz)</h3>
+  <div class="box rule"><span class="t">Regla</span>
+    \[a\sqrt[n]{b}=\sqrt[n]{a^n\cdot b}\]
+    <p>El número de fuera entra elevado al índice.</p>
+  </div>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[3\sqrt7=\sqrt{3^2\cdot7}=\sqrt{63}\qquad\qquad 2\sqrt[3]{7}=\sqrt[3]{2^3\cdot7}=\sqrt[3]{56}\qquad\qquad a^2\sqrt[3]{a}=\sqrt[3]{a^6\cdot a}=\sqrt[3]{a^7}\]
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="part" id="multiplicar">
+  <h2><span class="n">08</span>Multiplicar, dividir, raíz de una raíz y raíz de una fracción</h2>
+  <div class="chips"><span class="chip">Ej. 4</span><span class="chip">Ej. 7</span><span class="chip">Ej. 8</span><span class="chip">Ej. 13</span></div>
+  <div class="box rule"><span class="t">Reglas (con el mismo índice)</span>
+    \[\sqrt[n]{a}\cdot\sqrt[n]{b}=\sqrt[n]{a\cdot b}\qquad\qquad \frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\]
+    \[\left(\sqrt[n]{a}\right)^m=\sqrt[n]{a^m}\qquad\qquad \sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}\]
+  </div>
+
+  <h3>Multiplicar</h3>
+  <ol class="steps">
+    <li><div>Si los índices son distintos, redúcelos a índice común (sección <a href="#indice-comun">06</a>).</div></li>
+    <li><div>Multiplica los números de fuera entre sí y los de dentro entre sí.</div></li>
+    <li><div>Descompón lo de dentro y extrae factores si se puede.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt6\cdot\sqrt{21}=\sqrt{126}=\sqrt{2\cdot3^2\cdot7}=3\sqrt{14}\]
+    \[\sqrt2\cdot\sqrt[3]{5}=\sqrt[6]{2^3}\cdot\sqrt[6]{5^2}=\sqrt[6]{8\cdot25}=\sqrt[6]{200}\]
+    <p>Consejo: no multipliques los números grandes de dentro. Déjalos en factores primos; así extraer es inmediato.</p>
+  </div>
+
+  <h3>Dividir</h3>
+  <p>Igual que multiplicar, pero dividiendo. Si los números son potencias de la misma base, resta exponentes: \(\dfrac{\sqrt[3]{2^5}}{\sqrt[3]{2^2}}=\sqrt[3]{2^3}=2\).</p>
+
+  <h3>Raíz de una raíz (raíces anidadas)</h3>
+  <ol class="steps">
+    <li><div>Empieza por la raíz <strong>de más adentro</strong>.</div></li>
+    <li><div>Si hay un número multiplicando delante de una raíz interior, mételo dentro de esa raíz (introducir factores).</div></li>
+    <li><div>Cuando tengas una raíz pegada a otra, multiplica los índices. Repite hacia fuera.</div></li>
+    <li><div>Simplifica el radical final.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\sqrt{5\sqrt[3]{5}}=\sqrt{\sqrt[3]{5^3\cdot5}}=\sqrt[6]{5^4}=\sqrt[3]{5^2}=\sqrt[3]{25}\]
+    <p>Otra forma, con potencias: \(\sqrt{5\cdot5^{1/3}}=\left(5^{4/3}\right)^{1/2}=5^{4/6}=5^{2/3}\). Es la que pide el ejercicio 17.</p>
+  </div>
+
+  <h3>Raíz de una fracción</h3>
+  <p>Se hace la raíz del numerador y la del denominador por separado.</p>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt{\frac{81}{100}}=\frac{9}{10}\qquad\qquad \sqrt[3]{\frac{8}{343}}=\frac{2}{7}\qquad\qquad \sqrt{\frac{5}{4}}=\frac{\sqrt5}{2}\]
+  </div>
+  <div class="box warn"><span class="t">Si hay una suma dentro de la raíz</span>
+    <p>\(\sqrt{a+b}\neq\sqrt a+\sqrt b\). Primero haces la suma de dentro (con fracciones, denominador común) y después la raíz:</p>
+    \[\sqrt{1+\frac{9}{16}}=\sqrt{\frac{16}{16}+\frac{9}{16}}=\sqrt{\frac{25}{16}}=\frac54\]
+    <p>Comprueba que \(\sqrt1+\sqrt{\frac{9}{16}}=1+\frac34=\frac74\), que es otro número. Mal hecho.</p>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="part" id="sumar">
+  <h2><span class="n">09</span>Sumar y restar radicales</h2>
+  <div class="chips"><span class="chip">Ej. 9</span><span class="chip">Ej. 12</span></div>
+  <p>Solo se pueden sumar radicales <strong>semejantes</strong>: los que tienen el mismo índice y el mismo radicando. Funciona como sumar "manzanas": \(3x+5x=8x\), y del mismo modo \(3\sqrt2+5\sqrt2=8\sqrt2\).</p>
+  <ol class="steps">
+    <li><div>Extrae factores de <strong>cada</strong> radical hasta que el número de dentro sea lo más pequeño posible.</div></li>
+    <li><div>Agrupa los que hayan quedado con la misma raíz.</div></li>
+    <li><div>Suma o resta los números de delante (coeficientes). La raíz no cambia.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt{28}+\sqrt{63}-\sqrt7=2\sqrt7+3\sqrt7-1\sqrt7=4\sqrt7\]
+    \[\sqrt[3]{40}+\sqrt[3]{135}=\sqrt[3]{2^3\cdot5}+\sqrt[3]{3^3\cdot5}=2\sqrt[3]{5}+3\sqrt[3]{5}=5\sqrt[3]{5}\]
+  </div>
+  <div class="box tip"><span class="t">Con coeficientes fraccionarios</span>
+    <p>Después de extraer, si te quedan fracciones delante, suma esas fracciones con denominador común (sección <a href="#fracciones">02</a>):</p>
+    \[\frac{1}{2}\sqrt3+\frac{2}{3}\sqrt3=\left(\frac36+\frac46\right)\sqrt3=\frac76\sqrt3\]
+    <p>Si hay una fracción dentro de la raíz, sepárala primero: \(\sqrt{\frac{20}{9}}=\frac{\sqrt{20}}{3}=\frac{2\sqrt5}{3}\).</p>
+  </div>
+  <div class="box warn"><span class="t">Cuidado</span>
+    <p>\(\sqrt2+\sqrt3\) no se puede juntar: no es \(\sqrt5\). Si tras extraer quedan radicales distintos, el resultado se deja así.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="part" id="identidades">
+  <h2><span class="n">10</span>Identidades notables con raíces</h2>
+  <div class="chips"><span class="chip">Ej. 10</span><span class="chip">Ej. 11–12</span><span class="chip">Ej. 19</span></div>
+  <div class="box rule"><span class="t">Las tres identidades</span>
+    \[(a+b)^2=a^2+2ab+b^2\]
+    \[(a-b)^2=a^2-2ab+b^2\]
+    \[(a+b)(a-b)=a^2-b^2\]
+    <p>Y la propiedad que lo hace todo fácil: \(\left(\sqrt a\right)^2=a\). La raíz cuadrada al cuadrado desaparece.</p>
+  </div>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[(\sqrt6-1)^2=(\sqrt6)^2-2\cdot\sqrt6\cdot1+1^2=6-2\sqrt6+1=7-2\sqrt6\]
+    \[(2\sqrt5)^2=2^2\cdot(\sqrt5)^2=4\cdot5=20\]
+    \[(\sqrt5+\sqrt2)(\sqrt5-\sqrt2)=5-2=3\]
+  </div>
+  <div class="box tip"><span class="t">Productos que no son identidades</span>
+    <p>Si los dos paréntesis no encajan en una identidad, multiplica "todos con todos" (propiedad distributiva) y luego agrupa:</p>
+    \[(2+\sqrt3)(1-\sqrt3)=2-2\sqrt3+\sqrt3-3=-1-\sqrt3\]
+  </div>
+  <div class="box warn"><span class="t">Cuidado</span>
+    <p>El error más frecuente es olvidar el doble producto: \((\sqrt6-1)^2\neq 6+1\).</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="part" id="racionalizar">
+  <h2><span class="n">11</span>Racionalizar: quitar la raíz del denominador</h2>
+  <div class="chips"><span class="chip">Ej. 11</span><span class="chip">Ej. 12</span><span class="chip">Ej. 14</span></div>
+  <p>Racionalizar es conseguir que en el denominador no quede ninguna raíz. El truco siempre es el mismo: <strong>multiplicar arriba y abajo por lo mismo</strong>. Así la fracción no cambia de valor (es como multiplicar por 1). Lo que cambia es el "por qué" según el caso.</p>
+
+  <h3>Caso 1. Una raíz cuadrada sola abajo: \(\dfrac{a}{b\sqrt c}\)</h3>
+  <p>Multiplica arriba y abajo por \(\sqrt c\). Abajo queda \(b\cdot c\).</p>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{6}{\sqrt3}=\frac{6\cdot\sqrt3}{\sqrt3\cdot\sqrt3}=\frac{6\sqrt3}{3}=2\sqrt3\]
+  </div>
+
+  <h3>Caso 2. Una raíz de otro índice abajo: \(\dfrac{a}{\sqrt[n]{b^m}}\)</h3>
+  <p>Multiplica arriba y abajo por \(\sqrt[n]{b^{\,n-m}}\). Así el exponente de abajo suma \(n\) y la raíz se va.</p>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{1}{\sqrt[3]{5}}=\frac{1\cdot\sqrt[3]{5^2}}{\sqrt[3]{5}\cdot\sqrt[3]{5^2}}=\frac{\sqrt[3]{25}}{\sqrt[3]{5^3}}=\frac{\sqrt[3]{25}}{5}\]
+    <p>Antes de empezar, escribe el radicando como potencia de primos y simplifica el radical si se puede. Si es \(\sqrt[5]{4}\), escríbelo como \(\sqrt[5]{2^2}\) y multiplica por \(\sqrt[5]{2^3}\).</p>
+  </div>
+
+  <h3>Caso 3. Una suma o resta con raíces abajo: \(\dfrac{a}{\sqrt b\pm\sqrt c}\)</h3>
+  <p>Multiplica arriba y abajo por el <strong>conjugado</strong> del denominador: la misma expresión con el signo del medio cambiado. Abajo aparece \((x+y)(x-y)=x^2-y^2\) y las raíces cuadradas desaparecen.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Denominador</th><th>Conjugado</th><th>Producto</th></tr></thead>
+    <tbody>
+      <tr><td>\(\sqrt5-1\)</td><td>\(\sqrt5+1\)</td><td>\(5-1=4\)</td></tr>
+      <tr><td>\(\sqrt3+\sqrt2\)</td><td>\(\sqrt3-\sqrt2\)</td><td>\(3-2=1\)</td></tr>
+      <tr><td>\(2\sqrt7-3\)</td><td>\(2\sqrt7+3\)</td><td>\(28-9=19\)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\frac{4}{\sqrt5-1}=\frac{4(\sqrt5+1)}{(\sqrt5-1)(\sqrt5+1)}=\frac{4(\sqrt5+1)}{5-1}=\frac{4(\sqrt5+1)}{4}=\sqrt5+1\]
+    <p>Si arriba también hay una suma con raíces, multiplica arriba "todos con todos" y agrupa términos semejantes.</p>
+  </div>
+
+  <h3>Cuando hay varias fracciones (ejercicio 12)</h3>
+  <ol class="steps">
+    <li><div>Racionaliza <strong>cada fracción por separado</strong>.</div></li>
+    <li><div>Simplifica cada resultado.</div></li>
+    <li><div>Suma o resta usando denominador común y agrupando radicales semejantes.</div></li>
+  </ol>
+  <div class="box warn"><span class="t">Cuidado</span>
+    <p>Para simplificar al final, el número de abajo tiene que dividir a <strong>todos</strong> los términos de arriba. \(\dfrac{4+4\sqrt5}{4}=1+\sqrt5\) sí; \(\dfrac{4+\sqrt5}{4}\) se queda como está o se separa en \(1+\frac{\sqrt5}{4}\).</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="part" id="exponente">
+  <h2><span class="n">12</span>Potencias de exponente fraccionario</h2>
+  <div class="chips"><span class="chip">Ej. 14</span><span class="chip">Ej. 15</span><span class="chip">Ej. 16</span><span class="chip">Ej. 17</span></div>
+  <div class="box rule"><span class="t">Regla</span>
+    \[a^{m/n}=\sqrt[n]{a^m}\qquad\qquad a^{-m/n}=\frac{1}{\sqrt[n]{a^m}}\]
+    <p>El denominador del exponente es el índice; el numerador es el exponente de dentro. Un exponente negativo manda la potencia al denominador.</p>
+  </div>
+
+  <h3>De potencia a raíz (ejercicio 14)</h3>
+  <ol class="steps">
+    <li><div>Simplifica primero la fracción del exponente si se puede (\(3^{4/6}=3^{2/3}\)).</div></li>
+    <li><div>Si el exponente es una fracción que "da entero" (como \(\frac{8}{4}=2\)), es una potencia normal.</div></li>
+    <li><div>Si es negativo, pon la potencia en el denominador y racionaliza.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[5^{2/3}=\sqrt[3]{5^2}=\sqrt[3]{25}\qquad\qquad 3^{-1/2}=\frac{1}{\sqrt3}=\frac{\sqrt3}{3}\qquad\qquad 4^{-3/2}=\frac{1}{\sqrt{4^3}}=\frac{1}{8}\]
+  </div>
+
+  <h3>De raíz a potencia con la base más simple (ejercicio 15)</h3>
+  <p>"Base más simple" quiere decir un número primo cuando se pueda. Descompón el radicando y aplica \(\sqrt[n]{a^m}=a^{m/n}\).</p>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[\sqrt[4]{8}=\sqrt[4]{2^3}=2^{3/4}\qquad\qquad \frac{1}{\sqrt[5]{9}}=\frac{1}{\sqrt[5]{3^2}}=3^{-2/5}\]
+  </div>
+
+  <h3>Calcular el valor (ejercicio 16)</h3>
+  <ol class="steps">
+    <li><div>Si el exponente es decimal, pásalo a fracción (sección <a href="#fracciones">02</a>).</div></li>
+    <li><div>Escribe la base como potencia de un primo.</div></li>
+    <li><div>Multiplica exponentes (potencia de potencia) y simplifica.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplos</span>
+    \[16^{3/4}=(2^4)^{3/4}=2^{4\cdot\frac34}=2^3=8\]
+    \[125^{0{,}\overline{6}}=125^{2/3}=(5^3)^{2/3}=5^2=25\]
+    \[\left(4^{3/5}\right)^{5/6}=4^{\frac35\cdot\frac56}=4^{1/2}=2\]
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="part" id="ecuaciones">
+  <h2><span class="n">13</span>Despejar \(x\) y demostrar igualdades</h2>
+  <div class="chips"><span class="chip">Ej. 18</span><span class="chip">Ej. 19</span></div>
+
+  <h3>Despejar \(x\) en una ecuación (ejercicio 18)</h3>
+  <ol class="steps">
+    <li><div>Simplifica cada término: el cuadrado de una fracción es el cuadrado de arriba entre el cuadrado de abajo, y \((\sqrt a)^2=a\).</div></li>
+    <li><div>Quita denominadores multiplicando toda la ecuación por el m.c.m. de los denominadores.</div></li>
+    <li><div>Agrupa los términos con \(x^2\) en un lado y los números en el otro. Despeja \(x^2\).</div></li>
+    <li><div>Haz la raíz cuadrada en los dos lados. <strong>No olvides el \(\pm\)</strong>: tanto el número positivo como el negativo, al cuadrado, dan lo mismo.</div></li>
+    <li><div>Si queda una raíz en el denominador, racionaliza.</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplo</span>
+    \[\left(\frac{x}{\sqrt3}\right)^2=\frac{5}{9}\;\Rightarrow\;\frac{x^2}{3}=\frac59\;\Rightarrow\;x^2=\frac{15}{9}=\frac53\;\Rightarrow\;x=\pm\sqrt{\frac53}=\pm\frac{\sqrt5}{\sqrt3}=\pm\frac{\sqrt{15}}{3}\]
+  </div>
+
+  <h3>Demostrar que una igualdad es cierta (ejercicio 19)</h3>
+  <p>Demostrar no es comprobar con la calculadora: hay que llegar de un lado al otro con operaciones exactas. Cuando una raíz cuadrada contiene otra raíz, la estrategia es esta:</p>
+  <ol class="steps">
+    <li><div>Toma el lado que <strong>no</strong> tiene raíz grande y elévalo al cuadrado con las identidades notables.</div></li>
+    <li><div>Si te sale exactamente lo que hay dentro de la raíz grande del otro lado, y los dos lados son positivos, la igualdad es cierta.</div></li>
+    <li><div>Si hay una fracción o un factor raro, elévalo también al cuadrado: \(\left(\frac{a}{\sqrt2}\right)^2=\frac{a^2}{2}\).</div></li>
+  </ol>
+  <div class="box ex"><span class="t">Ejemplo: demostrar que \(\sqrt{3+2\sqrt2}=1+\sqrt2\)</span>
+    \[(1+\sqrt2)^2=1+2\sqrt2+2=3+2\sqrt2\]
+    <p>Elevar \(1+\sqrt2\) al cuadrado da lo de dentro de la raíz. Como \(1+\sqrt2\) es positivo, es la raíz cuadrada de \(3+2\sqrt2\). Queda demostrado.</p>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="part" id="errores">
+  <h2><span class="n">14</span>Errores típicos (y cómo evitarlos)</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mal</th><th>Bien</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>\(\sqrt{9+16}=3+4\)</td><td>\(\sqrt{25}=5\)</td><td>La raíz no se reparte en sumas</td></tr>
+      <tr><td>\(\sqrt2+\sqrt3=\sqrt5\)</td><td>Se deja así</td><td>Solo se suman radicales semejantes</td></tr>
+      <tr><td>\((\sqrt3+1)^2=3+1\)</td><td>\(4+2\sqrt3\)</td><td>Falta el doble producto</td></tr>
+      <tr><td>\(\frac{6+\sqrt3}{3}=2+\sqrt3\)</td><td>\(2+\frac{\sqrt3}{3}\)</td><td>El denominador divide a todos los sumandos</td></tr>
+      <tr><td>\(\sqrt2\cdot\sqrt[3]{2}=\sqrt[5]{4}\)</td><td>\(\sqrt[6]{2^5}=\sqrt[6]{32}\)</td><td>Hay que poner índice común (o sumar exponentes \(\frac12+\frac13=\frac56\))</td></tr>
+      <tr><td>\(3\sqrt5=\sqrt{15}\)</td><td>\(\sqrt{45}\)</td><td>Al introducir, el factor entra elevado al índice</td></tr>
+      <tr><td>\(x^2=4\Rightarrow x=2\)</td><td>\(x=\pm2\)</td><td>\((-2)^2\) también es 4</td></tr>
+      <tr><td>\(a^{-2}=-a^2\)</td><td>\(\frac{1}{a^2}\)</td><td>El exponente negativo significa inverso, no número negativo</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box tip"><span class="t">Método para cualquier ejercicio</span>
+    <ol>
+      <li>Descompón en factores primos todos los números que estén dentro de raíces.</li>
+      <li>Si dudas, pasa las raíces a potencias de exponente fraccionario y usa las reglas de las potencias.</li>
+      <li>Simplifica en cada paso: extraer factores, simplificar fracciones y radicales.</li>
+      <li>Al terminar, mira que no quede ninguna raíz en un denominador y que el radical sea irreducible.</li>
+      <li>Compara con la solución o compruébalo con la calculadora.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>Guía de apoyo para la hoja "Ejercicios repaso raíces" (IES Fernando de Mena, Dpto. de Matemáticas). Todos los ejemplos usan números distintos a los de la hoja.</footer>
+</main>
+</div>
+
+</body></html>
